@@ -26,6 +26,10 @@
       --space-5: 8rem;
     }
 
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -211,15 +215,68 @@
 
     /* Configurator Mock */
     .config-mock {
-      background: #fff; border: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column;
-      max-width: 900px; margin: var(--space-4) auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
     }
-    @media(min-width: 768px) { .config-mock { flex-direction: row; } }
-    .config-banner { background: var(--green); color: white; padding: 0.5rem; text-align: center; font-size: 0.8rem; width: 100%; }
-    .config-left { flex: 1; padding: var(--space-4); display: flex; justify-content: center; align-items: center; background: var(--ivory); }
-    .config-right { width: 300px; padding: var(--space-3); border-left: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: var(--space-2);}
-    .mock-checkbox { font-size: 0.85rem; margin-bottom: 4px; color: var(--timber); }
-    .price-strip { margin-top: auto; padding-top: var(--space-2); border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem;}
+    @media(min-width: 768px) {
+      .config-mock { grid-template-columns: 1fr 1fr; }
+    }
+    .config-left {
+      background: var(--ivory);
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .config-right {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .config-banner {
+      background: var(--green);
+      color: white;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      border-radius: 4px 4px 0 0;
+      width: 100%;
+    }
+    .config-panel-inner {
+      padding: var(--space-3);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .config-row {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--timber);
+      cursor: pointer;
+      padding: 6px 8px;
+      margin: 0 -8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .config-row:hover { background: rgba(192,135,59,0.1); }
+    .config-row.finish-row:hover { background: rgba(0,0,0,0.05); }
+    .config-row:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+    .config-glyph { width: 24px; font-size: 1.1rem; color: #9B9B9B; }
+    .config-glyph.selected { color: var(--amber); }
+    .price-strip {
+      margin-top: auto;
+      padding-top: var(--space-2);
+      border-top: 1px solid rgba(0,0,0,0.1);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
 
     /* Builders */
     .builders { background-color: var(--green); color: var(--ivory); }
@@ -229,7 +286,7 @@
     /* Pricing */
     .pricing-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3); margin-top: var(--space-4); }
     @media(min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
-    .price-card { border: 1px solid var(--navy); padding: var(--space-3); text-align: center; background: #fff;}
+    .price-card { border: 1px solid var(--navy); padding: var(--space-3); text-align: center; background: #fff; display: flex; flex-direction: column; height: 100%; flex: 1; }
 
     /* Trust */
     .trust-strip { border-top: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); padding: var(--space-3) 0; text-align: center; margin: var(--space-5) 0; }
@@ -492,34 +549,52 @@
     <div class="container fade-up">
       <h2 style="text-align:center;">Configured for compliance.</h2>
       
-      <div class="config-mock">
-        <div class="config-banner">
-          <strong>Pathway-compliance check:</strong> configuration valid for Wallonia habitation légère ✓
+      <div id="config-interactive" class="config-mock">
+        <div class="config-left">
+          <svg viewBox="0 0 100 120" style="width:200px;">
+            <path d="M20 100 L35 20 L65 20 L80 100 Z" stroke="var(--timber)" fill="#fff" stroke-width="1"/>
+            <path d="M80 100 L90 90 L75 10 L65 20 Z" fill="rgba(0,0,0,0.05)" stroke="var(--timber)" stroke-width="0.5"/>
+          </svg>
+          <div class="small-caps" style="color: var(--navy); opacity: 0.6; margin-top: 16px;">Preview</div>
         </div>
-        <div style="display:flex; flex-direction:row; width:100%;">
-          <div class="config-left">
-            <svg viewBox="0 0 100 120" style="width:200px;">
-              <path d="M20 100 L35 20 L65 20 L80 100 Z" stroke="var(--timber)" fill="#fff" stroke-width="1"/>
-              <path d="M80 100 L90 90 L75 10 L65 20 Z" fill="rgba(0,0,0,0.05)" stroke="var(--timber)" stroke-width="0.5"/>
-            </svg>
+        
+        <div class="config-right">
+          <div class="config-banner">
+            <strong>Pathway-compliance check:</strong> configuration valid for Wallonia habitation légère ✓
           </div>
-          <div class="config-right">
+          <div class="config-panel-inner">
             <div class="small-caps">Modules</div>
-            <div class="mock-checkbox">✓ Entrance</div>
-            <div class="mock-checkbox">✓ Bathroom</div>
-            <div class="mock-checkbox">✓ Kitchen/Living</div>
-            <div class="mock-checkbox">✓ Sleeping Loft</div>
-            <div class="mock-checkbox" style="opacity:0.5;">☐ Rooftop Deck</div>
+            <div class="config-row" tabindex="0" data-module="entrance">
+              <span class="config-glyph selected">✓</span> Entrance
+            </div>
+            <div class="config-row" tabindex="0" data-module="bathroom">
+              <span class="config-glyph selected">✓</span> Bathroom
+            </div>
+            <div class="config-row" tabindex="0" data-module="kitchen">
+              <span class="config-glyph selected">✓</span> Kitchen/Living
+            </div>
+            <div class="config-row" tabindex="0" data-module="sleep">
+              <span class="config-glyph selected">✓</span> Sleeping Loft
+            </div>
+            <div class="config-row" tabindex="0" data-module="rooftop">
+              <span class="config-glyph">☐</span> Rooftop Deck
+            </div>
             
             <div class="small-caps" style="margin-top:16px;">Finish</div>
-            <div class="mock-checkbox">● Warm natural</div>
-            <div class="mock-checkbox" style="opacity:0.5;">○ White studio</div>
-            <div class="mock-checkbox" style="opacity:0.5;">○ Dark contrast</div>
+            <div class="config-row finish-row" tabindex="0" data-finish="warm">
+              <span class="config-glyph selected">●</span> Warm natural
+            </div>
+            <div class="config-row finish-row" tabindex="0" data-finish="white">
+              <span class="config-glyph">○</span> White studio
+            </div>
+            <div class="config-row finish-row" tabindex="0" data-finish="dark">
+              <span class="config-glyph">○</span> Dark contrast
+            </div>
 
             <div class="price-strip">
-              <strong>€34,500</strong><br>
+              <strong style="font-size: 1.2rem;" id="config-price">€34,500</strong><br>
               Compliant with: Wallonia habitation légère<br>
-              Time to build: 5 months
+              Time to build: <span id="config-time">5</span> months
             </div>
           </div>
         </div>
@@ -747,6 +822,97 @@
         msg.style.display = 'block';
         setTimeout(() => { msg.style.display = 'none'; }, 5000);
       }
+    }
+
+    // Configurator Logic
+    const configState = {
+      modules: { entrance: true, bathroom: true, kitchen: true, sleep: true, rooftop: false },
+      finish: 'warm'
+    };
+
+    const modulePrices = { entrance: 4200, bathroom: 8500, kitchen: 11000, sleep: 9000, rooftop: 5500 };
+    const finishMultiplier = { warm: 1, white: 1.05, dark: 1.08 };
+
+    const configInteractive = document.getElementById('config-interactive');
+    const priceDisplay = document.getElementById('config-price');
+    const timeDisplay = document.getElementById('config-time');
+
+    function updateConfig() {
+      let moduleCount = 0;
+      let basePrice = 0;
+      
+      for (const [mod, isSelected] of Object.entries(configState.modules)) {
+        if (isSelected) {
+          moduleCount++;
+          basePrice += modulePrices[mod];
+        }
+      }
+
+      const total = Math.round((basePrice * finishMultiplier[configState.finish]) / 100) * 100;
+      
+      priceDisplay.textContent = '€' + total.toLocaleString('en-US');
+      timeDisplay.textContent = moduleCount;
+
+      // Update UI Glyphs
+      document.querySelectorAll('.config-row[data-module]').forEach(row => {
+        const mod = row.dataset.module;
+        const glyph = row.querySelector('.config-glyph');
+        if (configState.modules[mod]) {
+          glyph.textContent = '✓';
+          glyph.classList.add('selected');
+        } else {
+          glyph.textContent = '☐';
+          glyph.classList.remove('selected');
+        }
+      });
+
+      document.querySelectorAll('.config-row[data-finish]').forEach(row => {
+        const fin = row.dataset.finish;
+        const glyph = row.querySelector('.config-glyph');
+        if (configState.finish === fin) {
+          glyph.textContent = '●';
+          glyph.classList.add('selected');
+        } else {
+          glyph.textContent = '○';
+          glyph.classList.remove('selected');
+        }
+      });
+    }
+
+    if (configInteractive) {
+      configInteractive.addEventListener('click', (e) => {
+        const moduleRow = e.target.closest('.config-row[data-module]');
+        if (moduleRow) {
+          const mod = moduleRow.dataset.module;
+          
+          let currentSelected = 0;
+          for (const isSelected of Object.values(configState.modules)) {
+             if (isSelected) currentSelected++;
+          }
+
+          if (configState.modules[mod] && currentSelected <= 3) {
+            return; // Minimum 3 modules
+          }
+          
+          configState.modules[mod] = !configState.modules[mod];
+          updateConfig();
+        }
+
+        const finishRow = e.target.closest('.config-row[data-finish]');
+        if (finishRow) {
+          configState.finish = finishRow.dataset.finish;
+          updateConfig();
+        }
+      });
+      
+      configInteractive.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          e.target.click();
+        }
+      });
+
+      updateConfig();
     }
   </script>
 </body>
