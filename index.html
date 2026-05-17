@@ -103,8 +103,14 @@
     }
     .nav-links { display: none; gap: var(--space-3); font-size: 0.9rem; }
     @media(min-width: 768px) { .nav-links { display: flex; } }
-    .wordmark { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
-    .wordmark svg { width: 20px; height: 28px; }
+    .nav-logo {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .nav-logo { height: 28px; }
+    }
 
     /* Hero */
     .hero {
@@ -376,13 +382,9 @@
 
   <!-- Navigation -->
   <nav id="nav">
-    <div class="wordmark">
-      <svg viewBox="0 0 24 32" aria-hidden="true">
-        <path d="M4 32 L8 0 L16 0 L20 32 Z" fill="currentColor" opacity="0.9"/>
-        <path d="M8 0 L12 32 L16 0 Z" fill="var(--offwhite)" opacity="0.1"/>
-      </svg>
-      Obelisk
-    </div>
+    <a href="#" style="display: block;">
+      <img src="/logo.png" alt="Obelisk" class="nav-logo" />
+    </a>
     <div class="nav-links">
       <a href="#how-it-works">How it works</a>
       <a href="#pathways">Pathways</a>
@@ -580,23 +582,23 @@
           
           <div class="modules-strip">
             <div class="mod">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="3" y="16" width="18" height="5" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="3" y="16" width="18" height="5" stroke-width="2"/></svg>
               <div>Entrance</div>
             </div>
             <div class="mod">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="4" y="12" width="16" height="4" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="4" y="12" width="16" height="4" stroke-width="2"/></svg>
               <div>Bathroom</div>
             </div>
             <div class="mod">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="5" y="8" width="14" height="4" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="5" y="8" width="14" height="4" stroke-width="2"/></svg>
               <div>Kitchen/Liv</div>
             </div>
             <div class="mod">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="6" y="4" width="12" height="4" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><rect x="6" y="4" width="12" height="4" stroke-width="2"/></svg>
               <div>Sleep Loft</div>
             </div>
             <div class="mod">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><path d="M7 2 L17 2" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A3A5C"><path d="M7 2 L17 2" stroke-width="2"/></svg>
               <div>Roof Deck</div>
             </div>
           </div>
@@ -747,10 +749,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="wordmark" style="color:#fff; margin-bottom:8px;">
-            <svg viewBox="0 0 24 32"><path d="M4 32 L8 0 L16 0 L20 32 Z" fill="currentColor"/></svg>
-            Obelisk
-          </div>
+          <img src="/logo.png" alt="Obelisk" class="nav-logo" style="margin-bottom:8px;" />
           <p style="opacity:0.7;">European tiny living,<br>compliant by default.</p>
         </div>
         <div class="footer-links">
