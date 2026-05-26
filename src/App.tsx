@@ -3,33 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Diagnostic from './components/Diagnostic';
-import HowItWorks from './components/HowItWorks';
-import Pathways from './components/Pathways';
-import Builders from './components/Builders';
-import Pricing from './components/Pricing';
-import TrustStrip from './components/TrustStrip';
-import Origin from './components/Origin';
-import Footer from './components/Footer';
-import { useFadeUp } from './hooks/useFadeUp';
+import { Route, Switch } from 'wouter';
+import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
+import CustomerDashboard from './pages/CustomerDashboard';
+import BuilderDashboard from './pages/BuilderDashboard';
 
 export default function App() {
-  useFadeUp();
-
   return (
-    <>
-      <Header />
-      <Hero />
-      <Diagnostic />
-      <HowItWorks />
-      <Pathways />
-      <Builders />
-      <Pricing />
-      <TrustStrip />
-      <Origin />
-      <Footer />
-    </>
+    <Switch>
+      <Route path="/" component={LandingPage} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/app/customer" component={CustomerDashboard} />
+      <Route path="/app/builder" component={BuilderDashboard} />
+      <Route>
+        <LandingPage />
+      </Route>
+    </Switch>
   );
 }

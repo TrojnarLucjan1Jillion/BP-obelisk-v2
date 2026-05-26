@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'wouter';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -26,15 +27,17 @@ export default function Footer() {
           </div>
           <div className="footer-links">
             <strong className="small-caps">Platform</strong>
-            <a href="#diagnostic">Diagnostic</a>
-            <a href="#pathways">Pathways</a>
-            <a href="#pricing">Pricing</a>
+            <a href="/#diagnostic">Diagnostic</a>
+            <a href="/#pathways">Pathways</a>
+            <a href="/#pricing">Pricing</a>
+            <Link href="/login">Customer login</Link>
           </div>
           <div className="footer-links">
             <strong className="small-caps">For Builders</strong>
-            <a href="#builders">Apply</a>
+            <a href="/#builders">Apply</a>
             <a href="#">Network agreement</a>
             <a href="#">Pathway training</a>
+            <Link href="/login">Builder login</Link>
           </div>
           <div className="footer-links">
             <strong className="small-caps">Stay updated</strong>
@@ -63,11 +66,11 @@ export default function Footer() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 'var(--space-2)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', fontSize: '0.8rem', opacity: 0.6 }}>
           <div style={{ display: 'flex', gap: 16 }}>
             <a href="#">Company</a>
-            <a href="#">Thesis PDF</a>
             <a href="#">Terms</a>
             <a href="#">Privacy</a>
+            <a href="#">Contact</a>
           </div>
-          <div>&copy; 2026 Obelisk. Built in Antwerp. KdG MCT Digital Nomads Bachelor Project.</div>
+          <div>&copy; 2026 Obelisk. Built in Antwerp.</div>
         </div>
       </div>
     </footer>

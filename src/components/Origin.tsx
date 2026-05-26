@@ -2,18 +2,18 @@ export default function Origin() {
   return (
     <section className="origin">
       <div className="container fade-up origin-content">
-        <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>How Obelisk got here</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Why Obelisk exists</h2>
         <p>
-          Obelisk did not start where it now sits. It began as a piece of modular furniture, became a 20 m² modular tiny home with a tapered silhouette, then a hybrid that tried to be both a house company and a regulatory platform. Four times during the academic year, the research kept pointing somewhere different from where I had started, and four times I followed it.
+          Tiny living in Europe is held back by a problem most people only discover after they have already committed: every country has different rules, every region inside each country has its own interpretation, and every commune can pull a permit in a different direction. Buyers spend months researching legal pathways instead of choosing a builder. Builders spend hours explaining regulation instead of building. Nobody consolidates any of it.
         </p>
         <p>
-          Every prospective European buyer I researched spent four to twelve months not on choosing a builder, but on trying to determine whether their preferred placement was legal. Builders did not know with certainty. Lawyers were expensive. Government portals published the regulation but never interpreted it for a specific buyer's situation. The buyer was alone in front of legal text.
+          Obelisk does that work. We map the legal pathway for any tiny home placement across Belgium, France, the Netherlands, Germany, and Portugal, down to commune level where commune-level rules apply. We vet the builders who know how to work within each pathway. We keep watching the regulation after the build is finished, so a customer is the first to know when a rule that affects them changes.
         </p>
         <p>
-          On 20 May 2026, a supervisor session with Xavier Vermeiren forced the final clarification: a hybrid identity could not be defended. Either house company or software company, not both. Within four days I had removed the tiny home product entirely. What remains is the platform: regulatory pathway clarity at country, region, and commune level for five European markets, vetted builder matching, and ongoing monitoring of regulatory change. The construction is for our partner builders to handle. Obelisk reads the law, verifies the pathway, and routes the work.
+          I started Obelisk after spending nine months trying to understand European tiny home placement in detail. What I found was not a construction problem with a regulatory complication, but a regulatory problem with a construction layer attached. The construction supply already exists. What was missing is the layer that translates the law for the buyer, and the buyer for the builder. That layer is the company.
         </p>
         <p style={{ textAlign: 'center', marginTop: 'var(--space-4)', fontSize: '0.9rem' }} className="small-caps">
-          Lucjan Trojnar, Founder &middot; KdG MCT Bachelor Thesis 2025 to 2026
+          Lucjan Trojnar, Founder
         </p>
       </div>
     </section>
