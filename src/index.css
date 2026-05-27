@@ -371,9 +371,8 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--navy);
-  opacity: 0.7;
+  letter-spacing: 0.14em;
+  color: rgba(26, 58, 92, 0.65);
 }
 
 .auth-label input {
@@ -388,16 +387,14 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
   color: var(--navy);
   border-radius: 3px;
   outline: none;
-  opacity: 1;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .auth-label input:focus {
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(192, 135, 59, 0.12);
+  box-shadow: 0 0 0 3px rgba(192, 135, 59, 0.18);
 }
 .auth-label input::placeholder {
-  color: var(--navy);
-  opacity: 0.35;
+  color: rgba(26, 58, 92, 0.28);
   font-weight: 400;
 }
 
@@ -578,6 +575,11 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
   display: flex;
   flex-direction: column;
   gap: 2px;
+  position: static;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0;
+  background: transparent;
 }
 
 .dash-nav-item {
@@ -656,6 +658,9 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 @media (min-width: 900px) {
   .dash-main { padding: var(--space-3) var(--space-4); }
 }
+.dash-main section {
+  padding: 0;
+}
 
 .dash-topbar {
   display: flex;
@@ -719,7 +724,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 .dash-stat:hover {
   border-color: rgba(26,58,92,0.18);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .dash-stat-label {
@@ -773,6 +778,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 .dash-card:hover {
   border-color: rgba(26,58,92,0.18);
   box-shadow: 0 4px 16px rgba(26,58,92,0.04);
+  transform: translateY(-2px);
 }
 
 /* Reverse-order row for the Builder dashboard's second row (lead inbox left, projects right) */
@@ -802,6 +808,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
   flex-direction: column;
   gap: 0;
   position: relative;
+  overflow: hidden;
 }
 
 .dash-step {
@@ -846,6 +853,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-step-title {
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--navy);
@@ -853,6 +861,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-step-meta {
+  font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--navy);
   opacity: 0.65;
@@ -879,6 +888,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-alert-tag {
+  font-family: var(--font-body);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -888,6 +898,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-alert-title {
+  font-family: var(--font-body);
   font-size: 0.92rem;
   color: var(--navy);
   margin-bottom: 4px;
@@ -895,6 +906,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-alert-meta {
+  font-family: var(--font-body);
   font-size: 0.78rem;
   color: var(--navy);
   opacity: 0.6;
@@ -1002,12 +1014,14 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-lead-meta {
+  font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--navy);
   opacity: 0.65;
 }
 
 .dash-lead-body {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--navy);
   opacity: 0.85;
@@ -1036,6 +1050,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 .dash-project:first-of-type { border-top: none; padding-top: 4px; }
 
 .dash-project-name {
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.92rem;
   color: var(--navy);
@@ -1043,6 +1058,7 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
 }
 
 .dash-project-stage {
+  font-family: var(--font-body);
   font-size: 0.78rem;
   color: var(--navy);
   opacity: 0.6;
