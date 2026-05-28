@@ -56,18 +56,22 @@ export default function Diagnostic() {
         <p>Free, no signup, three questions, instant pathway diagnostic.</p>
 
         <div className="diagnostic-widget">
+          {step !== 'result' && (
+            <div className="diag-progress" aria-hidden="true">
+              <div className={`diag-progress-dot ${step === 1 ? 'active' : step === 2 || step === 3 ? 'done' : ''}`} />
+              <div className="diag-progress-line" />
+              <div className={`diag-progress-dot ${step === 2 ? 'active' : step === 3 ? 'done' : ''}`} />
+              <div className="diag-progress-line" />
+              <div className={`diag-progress-dot ${step === 3 ? 'active' : ''}`} />
+            </div>
+          )}
           {step === 1 && (
             <div className="diag-animate">
-              <div className="small-caps">Step 1 of 3</div>
+              <div className="small-caps" style={{ opacity: 0.5, marginBottom: 'var(--space-1)' }}>Country</div>
               <h3>Where do you want to build?</h3>
               <div className="diag-options">
                 {(['Belgium', 'France', 'Netherlands', 'Germany', 'Portugal'] as Country[]).map((c) => (
                   <div key={c} className="diag-card" onClick={() => selectCountry(c)}>
-                    {c === 'Belgium' && '🇧🇪 '}
-                    {c === 'France' && '🇫🇷 '}
-                    {c === 'Netherlands' && '🇳🇱 '}
-                    {c === 'Germany' && '🇩🇪 '}
-                    {c === 'Portugal' && '🇵🇹 '}
                     {c}
                   </div>
                 ))}
@@ -77,7 +81,7 @@ export default function Diagnostic() {
 
           {step === 2 && (
             <div className="diag-animate">
-              <div className="small-caps">Step 2 of 3</div>
+              <div className="small-caps" style={{ opacity: 0.5, marginBottom: 'var(--space-1)' }}>Use</div>
               <h3>What is the primary use?</h3>
               <div className="diag-options">
                 {(['Permanent residence', 'Care/family unit', 'Holiday/tourism', 'Studio or office'] as UseCase[]).map((u) => (
@@ -91,7 +95,7 @@ export default function Diagnostic() {
 
           {step === 3 && (
             <div className="diag-animate">
-              <div className="small-caps">Step 3 of 3</div>
+              <div className="small-caps" style={{ opacity: 0.5, marginBottom: 'var(--space-1)' }}>Land</div>
               <h3>What land do you have?</h3>
               <div className="diag-options">
                 {(['Urban land I own', 'Rural land I own', 'No land yet'] as LandStatus[]).map((l) => (

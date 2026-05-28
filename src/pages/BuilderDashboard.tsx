@@ -44,6 +44,15 @@ export default function BuilderDashboard() {
           </div>
           <button onClick={() => setLocation('/')} className="dash-signout">Sign out</button>
         </div>
+
+        <nav className="dash-mobile-nav" aria-label="Builder navigation">
+          <a href="#" className="dash-mobile-nav-item active">Leads</a>
+          <a href="#" className="dash-mobile-nav-item">Projects</a>
+          <a href="#" className="dash-mobile-nav-item">Profile</a>
+          <a href="#" className="dash-mobile-nav-item">Pathways</a>
+          <a href="#" className="dash-mobile-nav-item">Training</a>
+          <a href="#" className="dash-mobile-nav-item">Billing</a>
+        </nav>
       </aside>
 
       <main className="dash-main">

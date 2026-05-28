@@ -2,7 +2,7 @@ export default function Origin() {
   return (
     <section className="origin">
       <div className="container fade-up origin-content">
-        <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Why Obelisk exists</h2>
+        <h2 style={{ marginBottom: 'var(--space-4)' }}>Why Obelisk exists</h2>
         <p>
           Tiny living in Europe is held back by a problem most people only discover after they have already committed: every country has different rules, every region inside each country has its own interpretation, and every commune can pull a permit in a different direction. Buyers spend months researching legal pathways instead of choosing a builder. Builders spend hours explaining regulation instead of building. Nobody consolidates any of it.
         </p>
@@ -12,7 +12,7 @@ export default function Origin() {
         <p>
           I started Obelisk after spending nine months trying to understand European tiny home placement in detail. What I found was not a construction problem with a regulatory complication, but a regulatory problem with a construction layer attached. The construction supply already exists. What was missing is the layer that translates the law for the buyer, and the buyer for the builder. That layer is the company.
         </p>
-        <p style={{ textAlign: 'center', marginTop: 'var(--space-4)', fontSize: '0.9rem' }} className="small-caps">
+        <p style={{ marginTop: 'var(--space-4)', fontSize: '0.9rem' }} className="small-caps">
           Lucjan Trojnar, Founder
         </p>
       </div>

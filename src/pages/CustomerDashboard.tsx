@@ -44,6 +44,15 @@ export default function CustomerDashboard() {
           </div>
           <button onClick={() => setLocation('/')} className="dash-signout">Sign out</button>
         </div>
+
+        <nav className="dash-mobile-nav" aria-label="Customer navigation">
+          <a href="#" className="dash-mobile-nav-item active">Overview</a>
+          <a href="#" className="dash-mobile-nav-item">Documents</a>
+          <a href="#" className="dash-mobile-nav-item">Builders</a>
+          <a href="#" className="dash-mobile-nav-item">Monitoring</a>
+          <a href="#" className="dash-mobile-nav-item">Insurance</a>
+          <a href="#" className="dash-mobile-nav-item">Profile</a>
+        </nav>
       </aside>
 
       <main className="dash-main">

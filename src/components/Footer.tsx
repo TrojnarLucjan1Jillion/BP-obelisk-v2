@@ -49,6 +49,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Email address"
+                  aria-label="Email address for regulatory digest"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && submit()}
