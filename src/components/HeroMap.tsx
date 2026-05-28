@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
 const HIGHLIGHT_STYLE = `
-  .seabase { fill: transparent !important; opacity: 0 !important; }
-  .region { fill: rgba(253,243,231,0.06) !important; stroke: rgba(253,243,231,0.18) !important; stroke-width: 1.5 !important; }
-  .BEL, .FRA, .NLD, .DEU, .PRT { fill: rgba(192,135,59,0.55) !important; stroke: rgba(192,135,59,0.9) !important; stroke-width: 2 !important; }
+  * { fill: transparent !important; stroke: transparent !important; }
+  .region { fill: rgba(253,243,231,0.07) !important; stroke: rgba(253,243,231,0.22) !important; stroke-width: 1 !important; }
+  .BEL, .FRA, .NLD, .DEU, .PRT { fill: rgba(192,135,59,0.6) !important; stroke: rgba(192,135,59,0.9) !important; stroke-width: 1.5 !important; }
 `;
 
 export default function HeroMap() {
@@ -23,11 +23,6 @@ export default function HeroMap() {
         svg.setAttribute('width', '100%');
         svg.setAttribute('height', '100%');
         svg.style.display = 'block';
-
-        // remove background gradient rects
-        svg.querySelectorAll('.seabase, [class*="seabase"]').forEach((el) => {
-          (el as SVGElement).style.display = 'none';
-        });
 
         // inject overrides
         const style = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
