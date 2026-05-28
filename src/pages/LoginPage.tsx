@@ -91,10 +91,10 @@ export default function LoginPage() {
           </button>
 
           <p className="auth-footer">
-            {role === 'customer' ? "Don't have a pathway yet?" : "Want to join the network?"}{' '}
-            <a href={role === 'customer' ? '/#diagnostic' : '/#builders'} className="auth-link">
-              {role === 'customer' ? 'Take the diagnostic' : 'Apply to join'}
-            </a>
+            {role === 'customer' ? "Don't have an account yet?" : "Want to join the network?"}{' '}
+            <Link href={role === 'customer' ? '/signup/customer' : '/signup/builder'} className="auth-link">
+              {role === 'customer' ? 'Create one' : 'Apply to join'}
+            </Link>
           </p>
         </div>
       </div>

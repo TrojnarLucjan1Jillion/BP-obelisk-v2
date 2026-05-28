@@ -1,3 +1,5 @@
+import { Link } from 'wouter';
+
 export default function Pricing() {
   return (
     <section id="pricing" style={{ background: 'var(--navy)', color: 'var(--ivory)' }}>
@@ -36,9 +38,9 @@ export default function Pricing() {
               <br />
               Persistent customer profile
             </p>
-            <a href="#" className="btn btn-main" style={{ width: '100%', marginTop: 'auto' }}>
+            <Link href="/signup/customer" className="btn btn-main" style={{ width: '100%', marginTop: 'auto', textAlign: 'center' }}>
               Buy the report
-            </a>
+            </Link>
           </div>
 
           <div className="price-card" style={{ background: 'rgba(253,243,231,0.06)', borderColor: 'rgba(253,243,231,0.15)', color: 'var(--ivory)' }}>
@@ -54,9 +56,9 @@ export default function Pricing() {
               <br />
               Insurance setup (post FSMA registration)
             </p>
-            <a href="#" className="btn btn-ghost" style={{ width: '100%', marginTop: 'auto' }}>
+            <Link href="/signup/customer" className="btn btn-ghost" style={{ width: '100%', marginTop: 'auto', textAlign: 'center', color: 'var(--ivory)', borderColor: 'rgba(253,243,231,0.4)' }}>
               Book the concierge
-            </a>
+            </Link>
           </div>
         </div>
 

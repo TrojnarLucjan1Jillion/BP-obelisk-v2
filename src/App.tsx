@@ -6,6 +6,8 @@
 import { Route, Switch } from 'wouter';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
+import CustomerSignupPage from './pages/CustomerSignupPage';
+import BuilderSignupPage from './pages/BuilderSignupPage';
 import CustomerDashboard from './pages/CustomerDashboard';
 import BuilderDashboard from './pages/BuilderDashboard';
 
@@ -14,6 +16,8 @@ export default function App() {
     <Switch>
       <Route path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/signup/customer" component={CustomerSignupPage} />
+      <Route path="/signup/builder" component={BuilderSignupPage} />
       <Route path="/app/customer" component={CustomerDashboard} />
       <Route path="/app/builder" component={BuilderDashboard} />
       <Route>

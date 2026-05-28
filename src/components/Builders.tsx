@@ -1,3 +1,5 @@
+import { Link } from 'wouter';
+
 export default function Builders() {
   return (
     <section id="builders" className="builders">
@@ -20,7 +22,7 @@ export default function Builders() {
         <div className="small-caps" style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: 'var(--space-2)', marginTop: 'var(--space-3)' }}>
           €29 / month per region &middot; No commission &middot; No platform setup fees
         </div>
-        <a href="#" className="btn" style={{ background: '#fff', color: 'var(--green)', marginTop: 'var(--space-2)', display: 'inline-block' }}>Apply to join the network &rarr;</a>
+        <Link href="/signup/builder" className="btn" style={{ background: '#fff', color: 'var(--green)', marginTop: 'var(--space-2)', display: 'inline-block' }}>Apply to join the network &rarr;</Link>
       </div>
     </section>
   );
