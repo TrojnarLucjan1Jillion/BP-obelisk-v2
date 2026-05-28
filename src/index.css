@@ -1145,6 +1145,12 @@ footer { background: var(--timber); color: var(--ivory); padding: var(--space-5)
   justify-content: center;
 }
 
+.hero-map-wrap svg {
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
 .hero-map-svg {
   width: 100%;
   max-width: 420px;
