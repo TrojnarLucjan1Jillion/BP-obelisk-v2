@@ -118,7 +118,7 @@ export const BUILDER_PATHWAYS = [
     id: 'be-wallonia',
     country: 'BE',
     name: 'Wallonia habitation légère',
-    decree: 'Décret du 2 mai 2019',
+    decree: 'Décret du 2 mai 2019, in force 1 September 2019',
     builds: 14,
     status: 'active' as const,
     note: '14 completed builds in this pathway',
