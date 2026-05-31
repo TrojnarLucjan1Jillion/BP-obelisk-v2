@@ -25,6 +25,11 @@ export default function App() {
       <Route path="/app/customer/insurance" component={CustomerDashboard} />
       <Route path="/app/customer/profile" component={CustomerDashboard} />
       <Route path="/app/builder" component={BuilderDashboard} />
+      <Route path="/app/builder/projects" component={BuilderDashboard} />
+      <Route path="/app/builder/profile" component={BuilderDashboard} />
+      <Route path="/app/builder/pathways" component={BuilderDashboard} />
+      <Route path="/app/builder/training" component={BuilderDashboard} />
+      <Route path="/app/builder/billing" component={BuilderDashboard} />
       <Route>
         <LandingPage />
       </Route>
