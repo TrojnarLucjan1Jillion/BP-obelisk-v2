@@ -19,6 +19,11 @@ export default function App() {
       <Route path="/signup/customer" component={CustomerSignupPage} />
       <Route path="/signup/builder" component={BuilderSignupPage} />
       <Route path="/app/customer" component={CustomerDashboard} />
+      <Route path="/app/customer/documents" component={CustomerDashboard} />
+      <Route path="/app/customer/builders" component={CustomerDashboard} />
+      <Route path="/app/customer/monitoring" component={CustomerDashboard} />
+      <Route path="/app/customer/insurance" component={CustomerDashboard} />
+      <Route path="/app/customer/profile" component={CustomerDashboard} />
       <Route path="/app/builder" component={BuilderDashboard} />
       <Route>
         <LandingPage />
