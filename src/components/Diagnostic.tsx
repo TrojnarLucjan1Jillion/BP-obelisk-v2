@@ -71,7 +71,14 @@ export default function Diagnostic() {
               <h3>Where do you want to build?</h3>
               <div className="diag-options">
                 {(['Belgium', 'France', 'Netherlands', 'Germany', 'Portugal'] as Country[]).map((c) => (
-                  <div key={c} className="diag-card" onClick={() => selectCountry(c)}>
+                  <div
+                    key={c}
+                    className="diag-card"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => selectCountry(c)}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && selectCountry(c)}
+                  >
                     {c}
                   </div>
                 ))}
@@ -85,7 +92,14 @@ export default function Diagnostic() {
               <h3>What is the primary use?</h3>
               <div className="diag-options">
                 {(['Permanent residence', 'Care/family unit', 'Holiday/tourism', 'Studio or office'] as UseCase[]).map((u) => (
-                  <div key={u} className="diag-card" onClick={() => selectUse(u)}>
+                  <div
+                    key={u}
+                    className="diag-card"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => selectUse(u)}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && selectUse(u)}
+                  >
                     {u}
                   </div>
                 ))}
@@ -99,7 +113,14 @@ export default function Diagnostic() {
               <h3>What land do you have?</h3>
               <div className="diag-options">
                 {(['Urban land I own', 'Rural land I own', 'No land yet'] as LandStatus[]).map((l) => (
-                  <div key={l} className="diag-card" onClick={() => selectLand(l)}>
+                  <div
+                    key={l}
+                    className="diag-card"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => selectLand(l)}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && selectLand(l)}
+                  >
                     {l}
                   </div>
                 ))}

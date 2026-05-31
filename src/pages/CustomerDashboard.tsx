@@ -159,6 +159,7 @@ function PathwayOverview() {
               <a
                 href={doc.href}
                 {...(doc.download ? { download: true } : {})}
+                aria-label={`Open ${doc.name}`}
                 className="dash-link-small"
               >
                 Open
@@ -209,6 +210,7 @@ function DocumentsView() {
               <a
                 href={doc.href}
                 {...(doc.download ? { download: true } : {})}
+                aria-label={`Open ${doc.name}`}
                 className="dash-link-small"
               >
                 Open
