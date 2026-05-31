@@ -41,7 +41,7 @@ function PathwayOverview() {
         <div className="dash-topbar-actions">
           <span className="dash-badge dash-badge-amber">Pathway active</span>
           <a
-            href="/pathway-report-emma.pdf"
+            href="/obelisk_pathway_report_wallonia.pdf"
             download
             className="btn btn-ghost"
             style={{ padding: '0.5rem 1rem', fontSize: 13 }}

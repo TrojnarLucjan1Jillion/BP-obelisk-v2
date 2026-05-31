@@ -34,7 +34,7 @@ export const EMMA_DOCUMENTS = [
     type: 'PDF',
     size: '1.4 MB',
     date: '19 May 2026',
-    href: '/pathway-report-emma.pdf',
+    href: '/obelisk_pathway_report_wallonia.pdf',
     download: true,
   },
   {
